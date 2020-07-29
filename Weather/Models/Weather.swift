@@ -1,0 +1,3 @@
+
+struct Weather: Codable {
+}
