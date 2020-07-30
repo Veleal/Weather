@@ -1,3 +1,3 @@
 protocol WeatherRepository {
-    func getWeather(_ location: Location, completion: (Weather?) -> Void)
+    func getWeather(_ location: Location, completion: @escaping (StationInfo?) -> Void)
 }

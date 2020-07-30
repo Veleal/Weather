@@ -10,7 +10,14 @@ class LocationsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        setupUI()
+    }
+    
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getWeatherData()
     }
     
     private func setupUI(){
@@ -47,14 +54,26 @@ extension LocationsTVC {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let locationCell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as! LocationCell
+        let location = presenter.locations[indexPath.row]
+        locationCell.setCell(location: location)
+        
         return locationCell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      if editingStyle == .delete {
+        presenter.locations.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+      }
+    }
 }
 
 extension LocationsTVC: LocationsView {
     func reloadData() {
+        refreshControl?.endRefreshing()
+        self.tableView.reloadData()
     }
 }

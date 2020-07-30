@@ -13,9 +13,10 @@ init(dataRepository: DataRepository, weatherRepository: WeatherRepository) {
         completion(locations)
     }
     
-    func loadWeather(location: Location, completion: (Bool) -> Void) {
-        weatherRepository.getWeather(location, completion:{(weather) in
-            completion(weather != nil)
+    func loadWeather(location: Location, completion: @escaping (Bool) -> Void) {
+        weatherRepository.getWeather(location, completion:{(stationInfo) in
+            location.stationInfo = stationInfo
+            completion(stationInfo != nil)
         })
     }
 }

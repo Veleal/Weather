@@ -1,5 +1,7 @@
 
 class Location: Codable {
-    var weather: Weather?
+    var lat: Double!
+    var lon: Double!
+    var stationInfo: StationInfo?
 }
 

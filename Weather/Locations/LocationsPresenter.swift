@@ -1,3 +1,4 @@
+import Foundation
 
 class LocationsPresenter {
     private(set) var view: LocationsView?
@@ -13,13 +14,24 @@ class LocationsPresenter {
     func getLocations() {
         interactor?.loadLocations{(locations) in
             self.locations = locations
+            getWeathers()
             view?.reloadData()
         }
     }
     
-    func getWeathers() {
+    func deleteLocation() {
+           interactor?.loadLocations{(locations) in
+               self.locations = locations
+               getWeathers()
+               view?.reloadData()
+           }
+       }
+    
+    private func getWeathers() {
         locations.forEach{interactor?.loadWeather(location: $0, completion: { (succsess) in
-            view?.reloadData()
+            DispatchQueue.main.async {
+                self.view?.reloadData()
+            }
         })}
     }
 }
