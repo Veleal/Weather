@@ -13,6 +13,12 @@ class LocationsInteractor {
         completion(locations)
     }
     
+    func deleteLocations(locationId: String, completion: ([Location]) -> Void) {
+          let locations = dataRepository.deleteLocation(locationId)
+          completion(locations)
+      }
+      
+    
     func loadWeather(location: Location, completion: @escaping (Bool) -> Void) {
         weatherRepository.getWeather(location, completion:{(stationInfo) in
             location.stationInfo = stationInfo

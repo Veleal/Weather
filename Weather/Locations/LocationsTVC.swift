@@ -73,8 +73,7 @@ extension LocationsTVC {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       if editingStyle == .delete {
-        presenter.locations.remove(at: indexPath.row)
-        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        presenter.deleteLocation(id: presenter.locations[indexPath.row].id)
       }
     }
 }

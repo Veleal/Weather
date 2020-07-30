@@ -184,7 +184,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weather" id="lxt-TX-3ZW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ube-mR-oQm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ube-mR-oQm">
+                            <connections>
+                                <segue destination="bBW-b0-3HH" kind="show" id="Ejj-u2-Rm6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Ia7-vN-MQC" kind="show" identifier="toDetatil" id="gmw-HK-2YE"/>
@@ -485,6 +489,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KZ-w0-hxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-891" y="63"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="LSN-mc-JOE">
+            <objects>
+                <viewController id="bBW-b0-3HH" customClass="MapViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eaj-Jh-xLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-8J-g2h">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZhJ-8J-g2h" firstAttribute="leading" secondItem="8r4-ge-baP" secondAttribute="leading" id="82X-v5-EQD"/>
+                            <constraint firstItem="8r4-ge-baP" firstAttribute="bottom" secondItem="ZhJ-8J-g2h" secondAttribute="bottom" id="8HP-uM-L9j"/>
+                            <constraint firstItem="ZhJ-8J-g2h" firstAttribute="top" secondItem="8r4-ge-baP" secondAttribute="top" id="IJ7-5s-2ju"/>
+                            <constraint firstItem="8r4-ge-baP" firstAttribute="trailing" secondItem="ZhJ-8J-g2h" secondAttribute="trailing" id="NHx-6a-Vfm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8r4-ge-baP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="IZw-CF-GaT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rnf-lf-qJ2">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="bBW-b0-3HH" id="D2f-vv-aHU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="ZhJ-8J-g2h" id="91R-sZ-aL6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xh1-tt-8FR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="-684"/>
         </scene>
     </scenes>
     <resources>

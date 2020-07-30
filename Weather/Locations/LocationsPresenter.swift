@@ -19,12 +19,11 @@ class LocationsPresenter {
         }
     }
     
-    func deleteLocation() {
-           interactor?.loadLocations{(locations) in
+    func deleteLocation(id: String) {
+        interactor?.deleteLocations(locationId: id, completion: {(locations) in
                self.locations = locations
-               getWeathers()
-               view?.reloadData()
-           }
+               getWeathers()             
+           })
        }
     
     private func getWeathers() {
