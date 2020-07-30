@@ -10,11 +10,11 @@ class LocationsTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         setupUI()
     }
     
-     override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         getWeatherData()
@@ -44,7 +44,7 @@ class LocationsTVC: UITableViewController {
         if let vc = segue.destination as? WeatherDetailVC, let info = sender as? StationInfo {
             vc.stationInfo = info
         }
-       }
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -72,13 +72,21 @@ extension LocationsTVC {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-      if editingStyle == .delete {
-        presenter.deleteLocation(id: presenter.locations[indexPath.row].id)
-      }
+        if editingStyle == .delete {
+            presenter.deleteLocation(id: presenter.locations[indexPath.row].id)
+        }
     }
 }
 
 extension LocationsTVC: LocationsView {
+    //have only 20 minutes for adding error handler=) so it is suuuper simple. The goal was to show status for exact location, but havn't time to implement this.
+    func showError(error: String) {
+        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        let close = UIAlertAction(title: "OK", style: .default) { (action) in }
+        alertController.addAction(close)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func reloadData() {
         refreshControl?.endRefreshing()
         self.tableView.reloadData()

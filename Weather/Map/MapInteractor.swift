@@ -7,7 +7,7 @@ class MapInteractor {
     }
     
     func saveLocation(location: Location, completion: @escaping (Bool) -> Void) {
-        self.mapRepository.saveLocation(location: location)
+        mapRepository.saveLocation(location: location)
         completion(true)
     }
 }

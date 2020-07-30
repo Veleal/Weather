@@ -30,8 +30,8 @@ class MapPresenter: NSObject {
         savingLoc.id = UUID().uuidString
         savingLoc.lat = location.latitude
         savingLoc.lon = location.longitude
-        interactor?.saveLocation(location: savingLoc, completion: { (success) in
-            self.view?.locationSaved()
+        interactor?.saveLocation(location: savingLoc, completion: { [weak self] (success) in
+            self?.view?.locationSaved()
         })
     }
 }

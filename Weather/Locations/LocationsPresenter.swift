@@ -12,24 +12,28 @@ class LocationsPresenter {
     }
     
     func getLocations() {
-        interactor?.loadLocations{(locations) in
-            self.locations = locations
-            getWeathers()
-            view?.reloadData()
+        interactor?.loadLocations{[weak self] (locations) in
+            self?.locations = locations
+            self?.getWeathers()
+            self?.view?.reloadData()
         }
     }
     
     func deleteLocation(id: String) {
-        interactor?.deleteLocations(locationId: id, completion: {(locations) in
-               self.locations = locations
-               getWeathers()             
-           })
-       }
+        interactor?.deleteLocations(locationId: id, completion: {[weak self](locations) in
+            self?.locations = locations
+            self?.getWeathers()
+        })
+    }
     
     private func getWeathers() {
-        locations.forEach{interactor?.loadWeather(location: $0, completion: { (succsess) in
-            DispatchQueue.main.async {
-                self.view?.reloadData()
+        locations.forEach{interactor?.loadWeather(location: $0, completion: { [weak self] (succsess, error)  in
+            if error == nil {
+                DispatchQueue.main.async {
+                    self?.view?.reloadData()
+                }
+            }else {
+                self?.view?.showError(error: error!)
             }
         })}
     }

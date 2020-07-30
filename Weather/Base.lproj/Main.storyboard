@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="zSS-qd-IUe" customClass="LocationCell" customModule="Weather" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LocationCell" id="zSS-qd-IUe" customClass="LocationCell" customModule="Weather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="115.33333587646484"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSS-qd-IUe" id="2Ss-bA-LVI">
@@ -142,7 +142,7 @@
                                                     <rect key="frame" x="188.66666666666666" y="39.333333333333336" width="37" height="37.000000000000007"/>
                                                 </activityIndicatorView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="l8d-Nq-TFT" firstAttribute="centerX" secondItem="JzT-K3-JCb" secondAttribute="centerX" id="5tg-eC-mpT"/>
                                                 <constraint firstItem="l8d-Nq-TFT" firstAttribute="centerY" secondItem="JzT-K3-JCb" secondAttribute="centerY" id="P7I-PJ-ae7"/>
