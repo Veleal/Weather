@@ -3,9 +3,10 @@ struct StationInfo: Codable {
     let weather: [Weather]
     let main: Main
     let wind: Wind
-    let rain: Rain
     let clouds: Cloud
     let name: String
+    let sys: Sys
+    let timezone: Int
 }
 
 struct Weather: Codable {
@@ -28,14 +29,11 @@ struct Wind: Codable {
     let deg: Int
 }
 
-struct Rain: Codable {
-    let one_hour: Double
-    
-    enum CodingKeys: String, CodingKey {
-        case one_hour = "1h"
-    }
-}
-
 struct Cloud: Codable {
     let all: Int
+}
+
+struct Sys: Codable {
+    let sunrise: UInt32
+    let sunset: UInt32
 }

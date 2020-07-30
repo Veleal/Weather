@@ -20,6 +20,10 @@ class LocationCell: UITableViewCell {
         cloudCoverageLbl.text = stationInfo.clouds.all.string+"%"
         humidityLbl.text = stationInfo.main.humidity.string+"%"
         windspeedLbl.text = stationInfo.wind.speed.string
-
+        
+    }
+    
+    override func prepareForReuse() {
+        avtivityView.isHidden = false;
     }
 }

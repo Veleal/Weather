@@ -1,4 +1,4 @@
 
-protocol LocationsView {
+protocol LocationsView: class {
     func reloadData()
 }

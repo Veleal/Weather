@@ -3,7 +3,7 @@ class LocationsInteractor {
     private let dataRepository: DataRepository!
     private let weatherRepository: WeatherRepository!
     
-init(dataRepository: DataRepository, weatherRepository: WeatherRepository) {
+    init(dataRepository: DataRepository, weatherRepository: WeatherRepository) {
         self.dataRepository = dataRepository
         self.weatherRepository = weatherRepository
     }

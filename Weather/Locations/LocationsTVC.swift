@@ -39,6 +39,12 @@ class LocationsTVC: UITableViewController {
         refreshControl?.beginRefreshing()
         presenter.getLocations()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? WeatherDetailVC, let info = sender as? StationInfo {
+            vc.stationInfo = info
+        }
+       }
 }
 
 // MARK: - UITableViewDataSource
@@ -61,6 +67,8 @@ extension LocationsTVC {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let info = presenter.locations[indexPath.row].stationInfo else { return }
+        self.performSegue(withIdentifier: "toDetatil", sender: info)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

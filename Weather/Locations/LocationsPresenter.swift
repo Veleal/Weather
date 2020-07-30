@@ -1,7 +1,7 @@
 import Foundation
 
 class LocationsPresenter {
-    private(set) var view: LocationsView?
+    private(set) weak var view: LocationsView?
     private(set) var interactor: LocationsInteractor?
     
     var locations: [Location] = []

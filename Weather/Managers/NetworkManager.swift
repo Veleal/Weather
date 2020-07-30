@@ -49,7 +49,7 @@ extension NetworkManager: WeatherRepository {
         let request = URLRequest(url: url)
         starRequest(request: request) { (jsonData) in
         let decoder = JSONDecoder()
-        let stationInfo = try? decoder.decode(StationInfo.self, from: jsonData)
+        let stationInfo = try? decoder.decode(StationInfo.self, from: jsonData)           
         completion(stationInfo)
         }
     }
