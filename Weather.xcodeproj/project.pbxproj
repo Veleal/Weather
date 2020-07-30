@@ -32,6 +32,8 @@
 		ADDF05F824D2F219001187C7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF05F424D2F219001187C7 /* MapViewController.swift */; };
 		ADDF05F924D2F219001187C7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF05F524D2F219001187C7 /* MapView.swift */; };
 		ADDF05FB24D2F588001187C7 /* MapRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF05FA24D2F588001187C7 /* MapRepository.swift */; };
+		ADDF05FE24D2FF94001187C7 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDF05FD24D2FF94001187C7 /* HelpVC.swift */; };
+		ADDF060024D300E0001187C7 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = ADDF05FF24D300E0001187C7 /* help.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		ADDF05F424D2F219001187C7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ADDF05F524D2F219001187C7 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		ADDF05FA24D2F588001187C7 /* MapRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRepository.swift; sourceTree = "<group>"; };
+		ADDF05FD24D2FF94001187C7 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		ADDF05FF24D300E0001187C7 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +113,10 @@
 				ADDF05EC24D2DC06001187C7 /* Detail */,
 				ADDF05F124D2F219001187C7 /* Map */,
 				ADCCC9D724D1B4AE00EA1B5B /* AppDelegate.swift */,
+				ADDF05FC24D2FF84001187C7 /* Help */,
 				ADDF05E824D2B17B001187C7 /* Units+Extension.swift */,
 				ADCCC9D824D1B4AE00EA1B5B /* Info.plist */,
+				ADDF05FF24D300E0001187C7 /* help.html */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -174,6 +180,14 @@
 				ADDF05F524D2F219001187C7 /* MapView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		ADDF05FC24D2FF84001187C7 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				ADDF05FD24D2FF94001187C7 /* HelpVC.swift */,
+			);
+			path = Help;
 			sourceTree = "<group>";
 		};
 		D7E69E1DA3E7C346A5298B76 /* Frameworks */ = {
@@ -253,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADCCC9E024D1B4AE00EA1B5B /* Main.storyboard in Resources */,
+				ADDF060024D300E0001187C7 /* help.html in Resources */,
 				ADCCC9DB24D1B4AE00EA1B5B /* Assets.xcassets in Resources */,
 				ADCCC9DF24D1B4AE00EA1B5B /* LaunchScreen.storyboard in Resources */,
 			);
@@ -301,6 +316,7 @@
 				ADDF05F824D2F219001187C7 /* MapViewController.swift in Sources */,
 				ADCCC9EA24D1BE6C00EA1B5B /* StationInfo.swift in Sources */,
 				ADCCC9DE24D1B4AE00EA1B5B /* Location.swift in Sources */,
+				ADDF05FE24D2FF94001187C7 /* HelpVC.swift in Sources */,
 				ADDF05F724D2F219001187C7 /* MapInteractor.swift in Sources */,
 				ADCCC9DA24D1B4AE00EA1B5B /* NetworkManager.swift in Sources */,
 				ADCCC9E824D1B80300EA1B5B /* LocationCell.swift in Sources */,

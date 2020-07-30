@@ -184,6 +184,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Weather" id="lxt-TX-3ZW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="4Sn-rP-qtz">
+                            <connections>
+                                <segue destination="mD2-h6-cvi" kind="show" id="pCG-n7-SaY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ube-mR-oQm">
                             <connections>
                                 <segue destination="bBW-b0-3HH" kind="show" id="Ejj-u2-Rm6"/>
@@ -489,6 +494,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KZ-w0-hxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-891" y="63"/>
+        </scene>
+        <!--HelpVC-->
+        <scene sceneID="AKW-h4-P4J">
+            <objects>
+                <viewController id="mD2-h6-cvi" customClass="HelpVC" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xK7-RN-GTd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFo-u2-M0b">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NFo-u2-M0b" firstAttribute="leading" secondItem="ouy-fZ-utN" secondAttribute="leading" id="NW8-Z8-Hbr"/>
+                            <constraint firstItem="ouy-fZ-utN" firstAttribute="bottom" secondItem="NFo-u2-M0b" secondAttribute="bottom" id="UPd-nM-b2m"/>
+                            <constraint firstItem="NFo-u2-M0b" firstAttribute="top" secondItem="ouy-fZ-utN" secondAttribute="top" id="Xxo-JE-7je"/>
+                            <constraint firstItem="ouy-fZ-utN" firstAttribute="trailing" secondItem="NFo-u2-M0b" secondAttribute="trailing" id="s9a-2x-ANc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ouy-fZ-utN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b4X-uu-tMR"/>
+                    <connections>
+                        <outlet property="webView" destination="NFo-u2-M0b" id="NXS-6Q-ed0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bev-Jb-GXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-233" y="-685"/>
         </scene>
         <!--Map-->
         <scene sceneID="LSN-mc-JOE">
